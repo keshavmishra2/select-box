@@ -1,0 +1,8 @@
+.main{
+    width: 50%;
+    margin-top: 20px; 
+    margin-left: 25%;
+}
+.main :hover{
+    border: 1px solid teal;
+}

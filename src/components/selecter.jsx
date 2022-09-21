@@ -1,25 +1,32 @@
 
-   import React, { useState } from 'react';
-   import Select from 'react-select';
-   
-   const options = [
-     { value: 'chocolate', label: 'Chocolate' },
-     { value: 'strawberry', label: 'Strawberry' },
-     { value: 'vanilla', label: 'Vanilla' },
-   ];
-   
+   import { Component } from "react";
+   import Select from "react-select";
+   import options from "./option";
+   import "./selecter.css"
+  
+  const styles = {
+    multiValue: (styles) => {
+      return {
+        ...styles,
+        backgroundColor: "papayawhip",
+      };
+    },
+  };
+  
+  
+  class SelectBox extends Component {
+    render() {
+      return (
+        <Select className="main"
+          styles={styles}
+          closeMenuOnSelect={false}
+          isMulti
+          options={options}
+          defaultValue={options[0]}
+        />
+      );
+    }
+  }
 
-const SelectBox = () =>{
-    const [selectedOption, setSelectedOption] = useState(null);
-    return (
-        <>
-            <Select
-        defaultValue={selectedOption}
-        onChange={setSelectedOption}
-        options={options}
-      />
-        </>
-    )
-}
 
 export default SelectBox;
